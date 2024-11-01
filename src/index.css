@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-bg: #00539f;
+  --primary-text: #feffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+.setup_inner .setup_item {
+  padding: 40px 0;
+  position: relative;
+}
+
+.setup_inner .s_number {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.setup_inner .round {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 30px;
+  color: #00539f;
+  text-align: center;
+  line-height: 70px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.setup_inner .line {
+  position: absolute;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  height: 0;
+  animation: heightAnimation 1s forwards;
+}
+
+@keyframes heightAnimation {
+  from { height: 0; }
+  to { height: 100%; }
+}
