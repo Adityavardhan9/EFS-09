@@ -12,15 +12,15 @@ const Navbar = () => {
     <nav className="fixed w-full bg-white shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo as Text with "Quicksand" font styling */}
+          {/* Logo and Text */}
           <div className="flex items-center">
-            <Link to="/">
+            <Link to="/" className="flex items-center space-x-2">
+              <img src="/EFS_latest_app_icon-1.png" alt="EpicForge Logo" className="h-8 w-8" />
               <span
-                className="bg-[#feffff] text-[#00539f] px-4 py-1.5 rounded-md text-2xl font-bold tracking-tight shadow-sm"
+                className="bg-[#feffff] text-[#00539f] px-4 py-1.5 rounded-md text-2xl font-bold tracking-tight shadow-sm transition-colors duration-300 hover:bg-[#00539f] hover:text-[#feffff]"
                 style={{
-                  fontFamily: "'Quicksand', sans-serif",
-                  fontWeight: '700', // Bold for logo
-                  boxShadow: '0px 4px 8px rgba(0, 83, 159, 0.2)', // Soft shadow for depth
+                  fontWeight: '700',
+                  boxShadow: '0px 4px 8px rgba(0, 83, 159, 0.2)',
                 }}
               >
                 EpicForge Software
@@ -30,11 +30,11 @@ const Navbar = () => {
           
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link to="/" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`} style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>Home</Link>
-              <Link to="/services" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/services') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`} style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>Services</Link>
-              <Link to="/about" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/about') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`} style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>About</Link>
-              <Link to="/contact" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/contact') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`} style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>Contact</Link>
-              <a href="#" className="bg-[#00539f] text-white hover:bg-[#004385] px-4 py-2 rounded-md text-sm font-medium transition-colors" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>Get Started</a>
+              <Link to="/" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Home</Link>
+              <Link to="/services" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/services') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Services</Link>
+              <Link to="/about" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/about') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>About</Link>
+              <Link to="/contact" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/contact') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Contact</Link>
+              <a href="#" className="bg-[#00539f] text-white hover:bg-[#004385] px-4 py-2 rounded-md text-sm font-medium transition-colors">Get Started</a>
             </div>
           </div>
           
@@ -52,11 +52,11 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link to="/" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`} style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>Home</Link>
-            <Link to="/services" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/services') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`} style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>Services</Link>
-            <Link to="/about" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/about') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`} style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>About</Link>
-            <Link to="/contact" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/contact') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`} style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>Contact</Link>
-            <a href="#" className="block px-3 py-2 rounded-md text-base font-medium bg-[#00539f] text-white hover:bg-[#004385]" style={{ fontFamily: "'Source Sans Pro', sans-serif" }}>Get Started</a>
+            <Link to="/" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Home</Link>
+            <Link to="/services" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/services') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Services</Link>
+            <Link to="/about" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/about') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>About</Link>
+            <Link to="/contact" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/contact') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Contact</Link>
+            <a href="#" className="block px-3 py-2 rounded-md text-base font-medium bg-[#00539f] text-white hover:bg-[#004385]">Get Started</a>
           </div>
         </div>
       )}

@@ -4,10 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "vite",               
     "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build": "vite build",         
+    "preview": "vite preview",     
+    "lint": "eslint .",            
+    "lint:fix": "eslint . --fix",  
+    "test": "echo \"No test script specified\" && exit 1", 
+    "deploy": "vite build && vite preview" 
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
