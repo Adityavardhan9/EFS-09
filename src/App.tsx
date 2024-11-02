@@ -1,5 +1,3 @@
-// App.tsx
-
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
@@ -17,6 +15,7 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const GetStarted = lazy(() => import('./pages/GetStarted'));
 const LearnMore = lazy(() => import('./pages/LearnMore'));
+const Careers = lazy(() => import('./pages/Careers'));  // Added Careers page
 
 const ErrorBoundaryFallback = ({ error }: { error: Error }) => (
   <div className="text-center py-8">
@@ -55,6 +54,7 @@ function App() {
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/get-started" element={<GetStarted />} />
                   <Route path="/learn-more" element={<LearnMore />} />
+                  <Route path="/careers" element={<Careers />} />  {/* New route */}
                 </Routes>
               </Suspense>
             </ErrorBoundary>
