@@ -13,7 +13,7 @@ const Services = () => {
       description: 'Scalable cloud infrastructure and migration services.',
     },
     {
-      title: 'Mobile Development',
+      title: 'Mobile App Development',
       image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=800',
       description: 'Native and cross-platform mobile applications.',
     },

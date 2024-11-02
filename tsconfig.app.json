@@ -11,8 +11,12 @@
     "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": true,
+    "noEmit": false,                      // Emit files for project references
     "jsx": "react-jsx",
+
+    /* Project References */
+    "composite": true,                    // Required for project references
+    "outDir": "./dist",                   // Output directory for emitted files
 
     /* Linting */
     "strict": true,

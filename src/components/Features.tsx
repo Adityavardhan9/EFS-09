@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Shield, Rocket, Cpu } from 'lucide-react';
 
 const Features = () => {
@@ -22,9 +23,38 @@ const Features = () => {
 
   return (
     <div className="py-24 bg-slate-800">
+      <Helmet>
+        <title>Why Choose EpicForge? - Advanced Features and Solutions</title>
+        <meta
+          name="description"
+          content="Explore the unique features of EpicForge Software, including enterprise security, fast deployment, and smart AI solutions that meet your business needs."
+        />
+        <meta name="keywords" content="EpicForge, Enterprise Security, Fast Deployment, AI Solutions, Technology Services" />
+        <link rel="canonical" href="https://epicforgesoftware.com/features" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Why Choose EpicForge? - Advanced Features and Solutions" />
+        <meta
+          property="og:description"
+          content="Discover why EpicForge Software is the best choice with features like bank-grade security, rapid deployment, and AI-powered solutions."
+        />
+        <meta property="og:url" content="https://epicforgesoftware.com/features" />
+        <meta property="og:image" content="https://epicforgesoftware.com/EFS_latest_app_icon-1.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Why Choose EpicForge? - Advanced Features and Solutions" />
+        <meta
+          name="twitter:description"
+          content="Discover why EpicForge Software is the best choice with features like bank-grade security, rapid deployment, and AI-powered solutions."
+        />
+        <meta name="twitter:image" content="https://epicforgesoftware.com/EFS_latest_app_icon-1.png" />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold sm:text-4xl">
+          <h2 className="text-3xl font-extrabold sm:text-4xl text-white">
             Why Choose EpicForge?
           </h2>
           <p className="mt-4 text-lg text-gray-300">
@@ -42,7 +72,7 @@ const Features = () => {
                     {feature.icon}
                   </div>
                   <div className="mt-6">
-                    <h3 className="text-xl font-medium text-center">{feature.title}</h3>
+                    <h3 className="text-xl font-medium text-center text-white">{feature.title}</h3>
                     <p className="mt-2 text-gray-300 text-center">{feature.description}</p>
                   </div>
                 </div>

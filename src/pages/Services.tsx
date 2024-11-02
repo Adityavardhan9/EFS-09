@@ -13,7 +13,7 @@ const Services = () => {
       features: ['Cloud Migration', 'Cloud Architecture', 'DevOps Services', 'Cloud Security']
     },
     {
-      title: 'Mobile Development',
+      title: 'Mobile App Development',
       description: 'Create powerful mobile experiences for your users with our expert mobile development services. We build native and cross-platform applications that deliver exceptional performance.',
       features: ['iOS Development', 'Android Development', 'Cross-platform Apps', 'Mobile App Strategy']
     }

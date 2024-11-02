@@ -1,8 +1,38 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const About = () => {
   return (
     <div className="pt-24 pb-12">
+      <Helmet>
+        <title>About EpicForge Software Pvt Ltd - Forging The Future Of Innovation</title>
+        <meta
+          name="description"
+          content="Learn more about EpicForge Software Pvt Ltd, a leader in innovative software solutions. Discover our story, values, and expertise in custom software development."
+        />
+        <meta name="keywords" content="EpicForge Software, About EpicForge, Software Development, Innovation, Technology" />
+        <link rel="canonical" href="https://epicforgesoftware.com/about" />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About EpicForge Software Pvt Ltd - Forging The Future Of Innovation" />
+        <meta
+          property="og:description"
+          content="Learn more about EpicForge Software Pvt Ltd, a leader in innovative software solutions. Discover our story, values, and expertise in custom software development."
+        />
+        <meta property="og:url" content="https://epicforgesoftware.com/about" />
+        <meta property="og:image" content="https://epicforgesoftware.com/EFS_latest_app_icon-1.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About EpicForge Software Pvt Ltd - Forging The Future Of Innovation" />
+        <meta
+          name="twitter:description"
+          content="Learn more about EpicForge Software Pvt Ltd, a leader in innovative software solutions. Discover our story, values, and expertise in custom software development."
+        />
+        <meta name="twitter:image" content="https://epicforgesoftware.com/EFS_latest_app_icon-1.png" />
+      </Helmet>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold mb-4">About EpicForge Software</h1>

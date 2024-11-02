@@ -34,7 +34,7 @@ const Navbar = () => {
               <Link to="/services" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/services') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Services</Link>
               <Link to="/about" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/about') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>About</Link>
               <Link to="/contact" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/contact') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Contact</Link>
-              <a href="#" className="bg-[#00539f] text-white hover:bg-[#004385] px-4 py-2 rounded-md text-sm font-medium transition-colors">Get Started</a>
+              <Link to="/get-started" className="bg-[#00539f] text-white hover:bg-[#004385] px-4 py-2 rounded-md text-sm font-medium transition-colors">Get Started</Link>
             </div>
           </div>
           
