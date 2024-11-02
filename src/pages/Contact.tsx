@@ -5,36 +5,44 @@ import { toast } from 'react-toastify';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [id]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    // Show a toast notification
-    toast.info(
-      "Thank you for reaching out! This service will be live soon. Meanwhile, you can directly contact us at info@epicforgesoftware.com.",
-      {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
+  
+    setLoading(true);
+  
+    try {
+      // Use the environment variable here
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/contactus`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        toast.success("Thank you for reaching out! We will get back to you soon.");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        const errorData = await response.json();
+        toast.error(`Error: ${errorData.message || "Unable to submit the form."}`);
       }
-    );
-
-    // Simulate saving to a JSON file (for illustration)
-    console.log("Simulated saved form submission:", JSON.stringify(formData, null, 2));
-
-    // Reset the form
-    setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast.error("There was an error submitting your request. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
+  
 
-  // Check if all fields have values to enable the button
   const isFormEmpty = !formData.name || !formData.email || !formData.message;
 
   return (
@@ -45,10 +53,7 @@ const Contact = () => {
           name="description"
           content="Get in touch with EpicForge Software Pvt Ltd to discuss your software needs. Contact us for custom software solutions, cloud services, and innovative technology."
         />
-        <meta
-          name="keywords"
-          content="EpicForge Software, Contact, Software Solutions, Custom Software, Cloud Services"
-        />
+        <meta name="keywords" content="EpicForge Software, Contact, Software Solutions, Custom Software, Cloud Services" />
         <link rel="canonical" href="https://epicforgesoftware.com/contact" />
       </Helmet>
 
@@ -128,13 +133,13 @@ const Contact = () => {
               <button
                 type="submit"
                 className={`w-full py-2 px-4 rounded-md transition-colors ${
-                  isFormEmpty
+                  isFormEmpty || loading
                     ? "bg-gray-200 text-gray-400 cursor-not-allowed"
                     : "bg-white text-[#00539f] hover:bg-gray-100"
                 }`}
-                disabled={isFormEmpty}
+                disabled={isFormEmpty || loading}
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>

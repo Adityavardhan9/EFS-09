@@ -54,3 +54,6 @@ coverage/
 
 # Build and output directories
 build/
+
+# Local Netlify folder
+.netlify

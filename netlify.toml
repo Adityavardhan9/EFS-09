@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"  # Build command for your frontend
+  publish = "dist"           # Directory where the frontend build is published
+  functions = "functions"     # Directory for Netlify serverless functions
+
+# Redirect all frontend routes to index.html for SPA behavior
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/server"
+  status = 200
