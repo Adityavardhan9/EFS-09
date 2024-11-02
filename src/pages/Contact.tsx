@@ -6,12 +6,12 @@ import { toast } from 'react-toastify';
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  const handleChange = (e: { target: { id: any; value: any } }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [id]: value }));
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Show a toast notification
