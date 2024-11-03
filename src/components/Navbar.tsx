@@ -8,6 +8,10 @@ const Navbar = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="fixed w-full bg-white shadow-lg z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,7 +31,7 @@ const Navbar = () => {
               </span>
             </Link>
           </div>
-          
+
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <Link to="/" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Home</Link>
@@ -39,7 +43,7 @@ const Navbar = () => {
               <Link to="/get-started" className="bg-[#00539f] text-white hover:bg-[#004385] px-4 py-2 rounded-md text-sm font-medium transition-colors">Get Started</Link>
             </div>
           </div>
-          
+
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -54,11 +58,12 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link to="/" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Home</Link>
-            <Link to="/services" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/services') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Services</Link>
-            <Link to="/about" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/about') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>About</Link>
-            <Link to="/contact" className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/contact') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Contact</Link>
-            <a href="#" className="block px-3 py-2 rounded-md text-base font-medium bg-[#00539f] text-white hover:bg-[#004385]">Get Started</a>
+            <Link to="/" onClick={handleLinkClick} className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Home</Link>
+            <Link to="/services" onClick={handleLinkClick} className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/services') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Services</Link>
+            <Link to="/about" onClick={handleLinkClick} className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/about') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>About</Link>
+            <Link to="/contact" onClick={handleLinkClick} className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/contact') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Contact</Link>
+            <Link to="/careers" onClick={handleLinkClick} className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/careers') ? 'text-[#00539f] font-semibold' : 'text-gray-600 hover:text-[#00539f]'}`}>Careers</Link>
+            <Link to="/get-started" onClick={handleLinkClick} className="block px-3 py-2 rounded-md text-base font-medium bg-[#00539f] text-white hover:bg-[#004385]">Get Started</Link>
           </div>
         </div>
       )}
